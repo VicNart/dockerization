@@ -10,7 +10,7 @@ services:
       - 8000:80
   
   db: 
-    container_name: hilltoplove
+    container_name: db
     image: mysql
     restart: always
     environment:
@@ -26,6 +26,6 @@ services:
         - '8080:80'
     restart: always
     environment:
-        PMA_HOST: hilltoplove
+        PMA_HOST: db
     depends_on:
         - db
